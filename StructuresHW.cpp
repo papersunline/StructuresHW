@@ -1,5 +1,3 @@
-
-
 #include <iostream>
 #include <windows.h>
 using namespace std;
@@ -58,7 +56,7 @@ int main()
     case TELE2:
         cout << "Here what we can calculate for you\nTalk among MTS will cost " << (float)mts.ppm_to_MTS * length_of_talk << " woodicks per " << length_of_talk << " minutes" <<
             "\nTalk with MegaFon costs around " << (float)mts.ppm_to_MegaFon * length_of_talk << " woodicks per " << length_of_talk << " minutes" <<
-            "\nTalk with Tele2 costs around " << (float)mts.ppm_to_Tele2 * length_of_talk << " woodicks per " << length_of_talk << " minutes" << endl << endl;
+            "\nTalk with Tele2 costs around " << (float)mts.ppm_to_Tele2 * length_of_talk << " woodicks per " << length_of_talk << " minutes" << endl;
 
         if ((float)mts.ppm_to_MegaFon * length_of_talk < (float)mts.ppm_to_MTS * length_of_talk && (float)mts.ppm_to_MegaFon < (float)mts.ppm_to_Tele2 * length_of_talk)
             cout << "\nIt would be much profitable to talk to MegaFon abon" << endl; break;
