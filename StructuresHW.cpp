@@ -1,4 +1,6 @@
-﻿#include <iostream>
+
+
+#include <iostream>
 #include <windows.h>
 using namespace std;
 
@@ -24,18 +26,18 @@ int main()
     cin >> user_choice;
     cin >> length_of_talk;
 
-    oper megafon{2.5};
-    oper mts{0,0.5,3.5,2.7};
-    oper Tele2{0,2,2.3,1.2};
-   
+    oper megafon{ 2.5 };
+    oper mts{ 0,0.5,3.5,2.7 };
+    oper Tele2{ 0,2,2.3,1.2 };
 
-    float total;     
+
+    float total;
 
     switch (user_choice)
     {
     case MEGAFON:
         cout << "One price for every call for you!" << endl;
-        cout << (float)length_of_talk * megafon.price_per_minute_versal << " woodicks for " << length_of_talk << " minutes on any operator"<< endl;
+        cout << (float)length_of_talk * megafon.price_per_minute_versal << " woodicks for " << length_of_talk << " minutes on any operator" << endl;
         break;
 
 
@@ -45,11 +47,11 @@ int main()
             "\nTalk with Tele2 costs around " << (float)mts.ppm_to_Tele2 * length_of_talk << " woodicks per " << length_of_talk << " minutes" << endl;
 
         if ((float)mts.ppm_to_MegaFon * length_of_talk < (float)mts.ppm_to_MTS * length_of_talk && (float)mts.ppm_to_MegaFon < (float)mts.ppm_to_Tele2 * length_of_talk)
-            cout << "It would be much profitable to talk to MegaFon abon" << endl; break;
+            cout << "\nIt would be much profitable to talk to MegaFon abon" << endl; break;
         if ((float)mts.ppm_to_MTS * length_of_talk < (float)mts.ppm_to_MegaFon * length_of_talk && (float)mts.ppm_to_MTS < (float)mts.ppm_to_Tele2 * length_of_talk)
-            cout << "It would be much profitable to talk to MTS abon" << endl; break;
+            cout << "\nIt would be much profitable to talk to MTS abon" << endl; break;
         if ((float)mts.ppm_to_Tele2 * length_of_talk < (float)mts.ppm_to_MTS * length_of_talk && (float)mts.ppm_to_Tele2 < (float)mts.ppm_to_MegaFon * length_of_talk)
-            cout << "It would be much profitable to talk to Tele2 abon" << endl;
+            cout << "\nIt would be much profitable to talk to Tele2 abon" << endl;
         break;
 
 
@@ -59,17 +61,24 @@ int main()
             "\nTalk with Tele2 costs around " << (float)mts.ppm_to_Tele2 * length_of_talk << " woodicks per " << length_of_talk << " minutes" << endl << endl;
 
         if ((float)mts.ppm_to_MegaFon * length_of_talk < (float)mts.ppm_to_MTS * length_of_talk && (float)mts.ppm_to_MegaFon < (float)mts.ppm_to_Tele2 * length_of_talk)
-            cout << "It would be much profitable to talk to MegaFon abon" << endl; break;
+            cout << "\nIt would be much profitable to talk to MegaFon abon" << endl; break;
         if ((float)mts.ppm_to_MTS * length_of_talk < (float)mts.ppm_to_MegaFon * length_of_talk && (float)mts.ppm_to_MTS < (float)mts.ppm_to_Tele2 * length_of_talk)
-            cout << "It would be much profitable to talk to MTS abon" << endl; break;
+            cout << "\nIt would be much profitable to talk to MTS abon" << endl; break;
         if ((float)mts.ppm_to_Tele2 * length_of_talk < (float)mts.ppm_to_MTS * length_of_talk && (float)mts.ppm_to_Tele2 < (float)mts.ppm_to_MegaFon * length_of_talk)
-            cout << "It would be much profitable to talk to MegaFon abon" << endl; 
+            cout << "\nIt would be much profitable to talk to MegaFon abon" << endl;
         break;
-    default: 
+    default:
         system("pause");
     }
-    Sleep(2000);  
-    cout << "\nWe are not pressing - choose is up to you :) " << endl;
+    if (user_choice == 2 || user_choice == 3)
+    {
+        Sleep(2000);
+        cout << "\nWe are not pressing - choose is up to you :) " << endl;
+    }
+    else
+    {
+        Sleep(2000);
+        cout << "\nWould be glad to help you again!" << endl;
+    }
     return 0;
 }
-
